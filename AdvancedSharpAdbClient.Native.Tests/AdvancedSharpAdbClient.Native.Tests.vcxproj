@@ -106,6 +106,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AdbClient.h" />
     <ClInclude Include="AdbServer.h" />
     <ClInclude Include="AdbServerStatus.h" />
     <ClInclude Include="pch.h" />
