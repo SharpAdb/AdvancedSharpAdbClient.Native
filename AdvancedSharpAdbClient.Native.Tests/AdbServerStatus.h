@@ -33,10 +33,7 @@ namespace AdvancedSharpAdbClient::Models
     struct AdbServerStatus
     {
         AdbServerStatus() = default;
-        AdbServerStatus(dllimport::AdbServerStatus status)
-        {
-            data = status;
-        }
+        AdbServerStatus(dllimport::AdbServerStatus status) { data = status; }
 
         bool IsRunning() const { return data.IsRunning; }
         void IsRunning(bool value) { data.IsRunning = value; }

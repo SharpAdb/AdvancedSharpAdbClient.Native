@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AdvancedSharpAdbClient.Native.Models;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdvancedSharpAdbClient.Native
 {
@@ -33,6 +30,23 @@ namespace AdvancedSharpAdbClient.Native
         /// </summary>
         [UnmanagedCallersOnly(EntryPoint = "AdbClientKillAdb")]
         public static void KillAdb() => Instance.KillAdb();
+
+        /// <summary>
+        /// Gets the devices that are available for communication.
+        /// </summary>
+        /// <returns>A list of devices that are connected.</returns>
+        /// <example>
+        /// <para>The following example list all Android devices that are currently connected to this PC:</para>
+        /// <code>
+        /// var devices = new AdbClient().GetDevices();
+        /// foreach (var device in devices)
+        /// {
+        ///     Console.WriteLine(device.Name);
+        /// }
+        /// </code>
+        /// </example>
+        [UnmanagedCallersOnly(EntryPoint = "AdbClientGetDevices")]
+        public static DeviceDataArray GetDevices() => Instance.GetDevices().Select<ManagedDeviceData, DeviceData>(x => x).ToArray();
 
         [UnmanagedCallersOnly(EntryPoint = "AdbClientDispose")]
         public static void Dispose() => instance = null;

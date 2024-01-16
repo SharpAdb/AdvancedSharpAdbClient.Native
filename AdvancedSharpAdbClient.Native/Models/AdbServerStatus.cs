@@ -35,11 +35,16 @@ namespace AdvancedSharpAdbClient.Native.Models
         public override readonly string ToString() =>
             IsRunning ? $"Version {Version} of the adb daemon is running." : "The adb daemon is not running.";
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="AdbServerStatus"/> struct based on <see cref="ManagedAdbServerStatus"/>.
+        /// </summary>
+        /// <param name="deviceData">The <see cref="ManagedAdbServerStatus"/> to convert.</param>
         public static implicit operator AdbServerStatus(ManagedAdbServerStatus serverStatus) => new(serverStatus.IsRunning, serverStatus.Version!);
 
         /// <summary>
         /// Gets a <see cref="string"/> that represents the current <see cref="AdbServerStatus"/> object.
         /// </summary>
+        /// <param name="serverStatus">The <see cref="AdbServerStatus"/> object to convert.</param>
         /// <returns>A <see cref="string"/> that represents the current <see cref="AdbServerStatus"/> object.</returns>
         [UnmanagedCallersOnly(EntryPoint = "AdbServerStatusToString")]
         public static nint ToString(AdbServerStatus serverStatus) => Marshal.StringToHGlobalAuto(serverStatus.ToString());

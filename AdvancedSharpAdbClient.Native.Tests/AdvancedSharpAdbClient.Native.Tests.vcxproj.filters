@@ -21,6 +21,12 @@
     <ClInclude Include="AdbClient.h">
       <Filter>SharpAdb</Filter>
     </ClInclude>
+    <ClInclude Include="DeviceData.h">
+      <Filter>SharpAdb\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceState.h">
+      <Filter>SharpAdb\Models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />

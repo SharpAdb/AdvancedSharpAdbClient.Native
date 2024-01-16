@@ -109,6 +109,8 @@
     <ClInclude Include="AdbClient.h" />
     <ClInclude Include="AdbServer.h" />
     <ClInclude Include="AdbServerStatus.h" />
+    <ClInclude Include="DeviceData.h" />
+    <ClInclude Include="DeviceState.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StartServerResult.h" />
     <ClInclude Include="Version.h" />

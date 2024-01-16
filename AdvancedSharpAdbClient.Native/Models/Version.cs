@@ -34,6 +34,10 @@ namespace AdvancedSharpAdbClient.Native.Models
             static string Join(params int[] array) => string.Join('.', array.Where(x => x != -1));
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="Version"/> struct based on <see cref="ManagedVersion"/>.
+        /// </summary>
+        /// <param name="deviceData">The <see cref="ManagedVersion"/> to convert.</param>
         public static implicit operator Version(ManagedVersion version) =>
             new(version.Major, version.Minor, version.Build, version.Revision);
 

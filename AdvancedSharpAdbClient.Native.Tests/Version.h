@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _VERSION_H_
 #define _VERSION_H_
+#include "string"
 namespace AdvancedSharpAdbClient::Models::dllimport
 {
     struct _declspec(dllexport) Version
