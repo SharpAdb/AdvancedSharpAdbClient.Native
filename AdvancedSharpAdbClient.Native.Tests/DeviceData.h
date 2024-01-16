@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _DEVICEDATA_H_
 #define _DEVICEDATA_H_
+#include "ArrayHost.h"
 #include "DeviceState.h"
 namespace AdvancedSharpAdbClient::Models::dllimport
 {
@@ -50,12 +51,6 @@ namespace AdvancedSharpAdbClient::Models::dllimport
         /// Gets or sets the device info message. Currently only seen for NoPermissions state.
         /// </summary>
         wchar_t* Message;
-    };
-
-    struct _declspec(dllexport) DeviceDataArray
-    {
-        DeviceData* Devices;
-        int Count;
     };
 
     extern "C"
@@ -110,12 +105,12 @@ namespace AdvancedSharpAdbClient::Models
         dllimport::DeviceData data;
     };
 
-    inline std::vector<DeviceData> GetVectorFromArray(dllimport::DeviceDataArray array)
+    inline std::vector<DeviceData> GetVectorFromArray(ArrayHost<dllimport::DeviceData> array)
     {
         std::vector<DeviceData> list;
         for (int i = 0; i < array.Count; i++)
         {
-            list.push_back(array.Devices[i]);
+            list.push_back(array.Array[i]);
         }
         return list;
     }

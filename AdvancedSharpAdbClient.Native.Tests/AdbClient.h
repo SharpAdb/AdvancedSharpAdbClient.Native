@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _ADBCLIENT_H_
 #define _ADBCLIENT_H_
+#include "ArrayHost.h"
 #include "DeviceData.h"
 namespace AdvancedSharpAdbClient::dllimport
 {
@@ -8,7 +9,7 @@ namespace AdvancedSharpAdbClient::dllimport
     {
         __declspec(dllimport) int AdbClientGetAdbVersion();
         __declspec(dllimport) int AdbClientKillAdb();
-        __declspec(dllimport) Models::dllimport::DeviceDataArray AdbClientGetDevices();
+        __declspec(dllimport) Models::ArrayHost<Models::dllimport::DeviceData> AdbClientGetDevices();
         __declspec(dllimport) void AdbClientDispose();
     }
 }

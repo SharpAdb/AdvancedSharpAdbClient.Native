@@ -27,6 +27,9 @@
     <ClInclude Include="DeviceState.h">
       <Filter>SharpAdb\Models</Filter>
     </ClInclude>
+    <ClInclude Include="ArrayHost.h">
+      <Filter>SharpAdb\Models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />

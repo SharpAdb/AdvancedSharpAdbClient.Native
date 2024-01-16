@@ -100,13 +100,4 @@ namespace AdvancedSharpAdbClient.Native.Models
         [UnmanagedCallersOnly(EntryPoint = "DeviceDataToString")]
         public static nint ToString(DeviceData deviceData) => deviceData.Serial;
     }
-
-    public struct DeviceDataArray(nint devices, int count)
-    {
-        public nint Devices = devices;
-        public int Count = count;
-
-        public static implicit operator DeviceDataArray(DeviceData[] devices) =>
-            new(Marshal.UnsafeAddrOfPinnedArrayElement(devices, 0), devices.Length);
-    }
 }

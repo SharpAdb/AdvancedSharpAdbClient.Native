@@ -10,7 +10,6 @@ using namespace AdvancedSharpAdbClient::Models;
 int main()
 {
     init_apartment();
-    //Collections::IIterable
     AdbServer::StartServer(L"C:/Users/qq251/OneDrive/应用/Win32/platform-tools/adb.exe", true);
     auto status = AdbServer::GetStatus();
     printf("%ls\n", status.ToString().c_str());

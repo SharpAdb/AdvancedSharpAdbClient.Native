@@ -46,7 +46,7 @@ namespace AdvancedSharpAdbClient.Native
         /// </code>
         /// </example>
         [UnmanagedCallersOnly(EntryPoint = "AdbClientGetDevices")]
-        public static DeviceDataArray GetDevices() => Instance.GetDevices().Select<ManagedDeviceData, DeviceData>(x => x).ToArray();
+        public static ArrayHost<DeviceData> GetDevices() => Instance.GetDevices().Select<ManagedDeviceData, DeviceData>(x => x).ToArray();
 
         [UnmanagedCallersOnly(EntryPoint = "AdbClientDispose")]
         public static void Dispose() => instance = null;

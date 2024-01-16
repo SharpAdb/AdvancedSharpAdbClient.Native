@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Nullable>Enable</Nullable>
     <PublishAot>True</PublishAot>
     <TargetFramework>net8.0</TargetFramework>

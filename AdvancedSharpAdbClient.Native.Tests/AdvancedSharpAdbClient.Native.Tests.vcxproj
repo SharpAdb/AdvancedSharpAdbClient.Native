@@ -109,6 +109,7 @@
     <ClInclude Include="AdbClient.h" />
     <ClInclude Include="AdbServer.h" />
     <ClInclude Include="AdbServerStatus.h" />
+    <ClInclude Include="ArrayHost.h" />
     <ClInclude Include="DeviceData.h" />
     <ClInclude Include="DeviceState.h" />
     <ClInclude Include="pch.h" />
