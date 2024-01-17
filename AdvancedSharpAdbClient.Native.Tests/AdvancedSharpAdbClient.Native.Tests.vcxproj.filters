@@ -30,6 +30,9 @@
     <ClInclude Include="ArrayHost.h">
       <Filter>SharpAdb\Models</Filter>
     </ClInclude>
+    <ClInclude Include="BufferHost.h">
+      <Filter>SharpAdb\Models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />

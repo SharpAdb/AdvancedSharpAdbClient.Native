@@ -3,11 +3,13 @@
 #define _ARRAYHOST_H_
 namespace AdvancedSharpAdbClient::Models
 {
-    template <class T>
+    template <typename T>
     struct _declspec(dllexport) ArrayHost
     {
         T* Array;
         int Count;
+
+        operator T* () const { return Array; }
     };
 }
 #endif

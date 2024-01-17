@@ -89,7 +89,24 @@ namespace AdvancedSharpAdbClient.Native.Models
             Features = Marshal.StringToHGlobalAuto(deviceData.Features),
             Usb = Marshal.StringToHGlobalAuto(deviceData.Usb),
             TransportId = Marshal.StringToHGlobalAuto(deviceData.TransportId),
-            Message = Marshal.StringToHGlobalAuto(deviceData.Message),
+            Message = Marshal.StringToHGlobalAuto(deviceData.Message)
+        };
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManagedDeviceData"/> struct based on <see cref="DeviceData"/>.
+        /// </summary>
+        /// <param name="deviceData">The <see cref="DeviceData"/> to convert.</param>
+        public static implicit operator ManagedDeviceData(DeviceData deviceData) => new()
+        {
+            Serial = Marshal.PtrToStringAuto(deviceData.Serial)!,
+            State = deviceData.State,
+            Model = Marshal.PtrToStringAuto(deviceData.Model)!,
+            Product = Marshal.PtrToStringAuto(deviceData.Product)!,
+            Name = Marshal.PtrToStringAuto(deviceData.Name)!,
+            Features = Marshal.PtrToStringAuto(deviceData.Features)!,
+            Usb = Marshal.PtrToStringAuto(deviceData.Usb)!,
+            TransportId = Marshal.PtrToStringAuto(deviceData.TransportId)!,
+            Message = Marshal.PtrToStringAuto(deviceData.Message)!
         };
 
         /// <summary>
